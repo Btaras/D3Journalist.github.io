@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+		</style>
+	</head>
+
+			<script src="array.js" charset="utf-8"></script>
+
+	<body>
+
+
+		<script type="text/javascript">
+
+		var ancestry = JSON.parse(ANCESTRY_FILE);
+			console.log(ancestry.length);
+
+// Calculating averages with reduce
+
+			function average(array) {
+				  function plus(a, b) { return a + b; }
+			  return array.reduce(plus) / array.length;
+			}
+
+				function age(p) { return p.died - p.born; }
+				function male(p) { return p.sex == "m"; }
+				function female(p) { return p.sex == "f"; }
+
+			// Understand array for input
+			console.log(ancestry.filter(male).map(age));
+			console.log(ancestry.filter(female).map(age));
+
+			// Result
+			console.log(average(ancestry.filter(male).map(age)));
+			console.log(average(ancestry.filter(female).map(age)));
+
+
+		
+		</script>
+
+
+	</body>
+</html>
