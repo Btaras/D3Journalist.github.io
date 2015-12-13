@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+		</style>
+	</head>
+
+			<script src="array.js" charset="utf-8"></script>
+
+	<body>
+
+
+		<script type="text/javascript">
+
+		var ancestry = JSON.parse(ANCESTRY_FILE);
+			console.log(ancestry.length);
+
+		function map(array, transform) {
+			var mapped = [];
+			for (var i = 0; i <array.length; i++) 
+
+			mapped.push(transform(array[i]));
+
+			return mapped;
+
+		}
+
+		var overNinety = ancestry.filter(function(person) {
+			  return person.died - person.born > 90;
+			});
+
+		console.log(map(overNinety, function(person) {
+			  return person.died;
+			}));
+
+		
+		</script>
+
+
+	</body>
+</html>
