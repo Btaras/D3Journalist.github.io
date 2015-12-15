@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<style type="text/css">
+		</style>
+	</head>
+
+			<script src="array.js" charset="utf-8"></script>
+
+	<body>
+
+
+		<script type="text/javascript">
+
+		var ancestry = JSON.parse(ANCESTRY_FILE);
+			console.log(ancestry.length);
+
+// Calculating averages with reduce
+
+			var byName = {};
+			ancestry.forEach(function(person) {
+			  byName[person.name] = person;
+			});
+
+			console.log(byName["Philibert Haverbeke"]);
+
+
+
+
+		
+		</script>
+
+
+	</body>
+</html>

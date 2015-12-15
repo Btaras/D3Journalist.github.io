@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+
+		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		<script src="//d3js.org/topojson.v1.min.js"></script>
+
+
+		<style type="text/css">
+		</style>
+
+<!-- <script src="uk.json" charset="utf-8"></script>
+ -->
+			<style type="text/css">
+				path {
+				  fill: #ccc;
+				  stroke: #fff;
+				  stroke-width: .5px;
+				}
+
+				path:hover {
+				  fill: red;
+				}
+
+			</style>
+
+	</head>
+	<body>
+
+
+		<script type="text/javascript">
+
+		var height = 500;
+		var width = 600;
+
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+
+        var path = d3.geo.path().projection(d3.geo.mercator());
+
+        d3.json("uk.json", function (error, topology) {
+        	if (error) throw error;
+
+        	svg.selectAll("body").data(topojson.feature(topology, topology.objects.counties).features)
+        	.enter()
+        	.append("path")
+        	.attr("d", path);
+        });
+						
+		</script>
+	</body>
+</html>
