@@ -1,0 +1,15 @@
+{
+  "name": "sampleapp",
+  "version": "1.0.0",
+  "description": "app description ",
+  "main": "setup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ben Heubl",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0"
+  }
+}
